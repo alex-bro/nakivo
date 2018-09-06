@@ -18,21 +18,23 @@ class Ajax
      */
     function ajax_init()
     {
-
-        add_action('wp_ajax_ajax_post_bulk', [$this, 'post_bulk']);
+        add_action('wp_ajax_ajax_get_news', [$this, 'get_news']);
+        add_action('wp_ajax_nopriv_ajax_get_news', [$this, 'get_news']);
     }
 
     /**
-     * post bulk
+     * get news
      */
-    function post_bulk(){
+    function get_news(){
         check_ajax_referer('ajax-va-nonce', 'security');
-        $data = $_POST['data'];
-        $res = (new Core())->post_bulk($data);
+        global $nakivo;
+
+        $res = Widgets::get_posts($_POST["data"]["cat"],$_POST["data"]["count"]);
+
         if ($res){
-            echo json_encode(wp_list_pluck($data['data'],'yt_id') );
+            echo json_encode(['result'=>true,'html'=>$res,'cat_counts'=>$nakivo->cat_counts]);
         } else {
-            echo json_encode(0);
+            echo json_encode(['result'=>false,'html'=>'','cat_counts'=>$nakivo->cat_counts]);
         }
 
         wp_die();

@@ -10,6 +10,7 @@
         </div>
     </footer>
 </div>
+    <?php wp_nonce_field('ajax-va-nonce', 'security_va'); ?>
 <?php wp_footer(); ?>
 </body>
 </html>

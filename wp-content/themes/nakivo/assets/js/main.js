@@ -1,4 +1,12 @@
 jQuery(document).ready(function($){
+
+    function toggle_load_more(cat_id){
+        if($('[data-cat-posts="'+cat_id+'"] .item').length < Number(abv.cat_counts[cat_id])){
+            $('#load_more').css('cssText','display:block!important;');
+        } else {
+            $('#load_more').css('cssText','display:none!important;');
+        }
+    }
     /**
      *  click on filter
      */
@@ -10,8 +18,38 @@ jQuery(document).ready(function($){
         $('.post_wrapper_all .posts-wrapper').removeClass('active');
         $('[data-cat-posts="'+cat_id+'"]').addClass('active');
 
-
+        toggle_load_more(cat_id);
 
         return false;
+    });
+
+    var processed = false;
+    $('#load_more').click(function(){
+        var cat = $('.post_wrapper_all .active').attr('data-cat-posts');
+        var count = $('.post_wrapper_all .active .item').length;
+        $.ajax({
+            type: 'POST',
+            dataType: 'json',
+            url: abv.ajaxurl,
+            data: {
+                'action': 'ajax_get_news',
+                'security': $('#security_va').val(),
+                'data':{
+                    'cat':cat,
+                    'count':count
+                },
+            },
+            success: function (data) {
+                if(data.result) {
+                    $(".post_wrapper_all .active").append($(data.html).html());
+                    toggle_load_more(cat);
+                    abv.cat_counts = data.cat_counts;
+                } else {
+
+                }
+            }
+        });
     })
+
+
 });

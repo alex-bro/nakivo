@@ -53,7 +53,7 @@ class Core
         wp_enqueue_style( 'bootstrap-css', get_template_directory_uri().'/assets/lib/bootstrap-4.0.0-dist/css/bootstrap.min.css', array(), $this->version );
         wp_enqueue_style( 'main-css', get_template_directory_uri().'/assets/css/main.css', array(), $this->version );
 
-        wp_enqueue_script( 'jquery-3-2-1', get_template_directory_uri() . '/assets/lib/jquery-3.2.1.slim.min.js', array(), $this->version, true );
+        wp_enqueue_script( 'jquery-3-2-1', get_template_directory_uri() . '/assets/lib/jquery-3.2.1.min.js', array(), $this->version, true );
         wp_enqueue_script( 'popper', get_template_directory_uri() . '/assets/lib/bootstrap-4.0.0-dist/js/popper.min.js', array(), $this->version, true );
         wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/assets/lib/bootstrap-4.0.0-dist/js/bootstrap.min.js', array(), $this->version, true );
         wp_enqueue_script( 'main-js', get_template_directory_uri() . '/assets/js/main.js', array(), $this->version, true );

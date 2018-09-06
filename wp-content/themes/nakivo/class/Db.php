@@ -36,7 +36,7 @@ class Db
 
     function get_categories_counts(){
         $cats = $this->get_all_categories();
-        $arr[0] = wp_count_posts()->publish;
+        $arr[0] = (int)wp_count_posts()->publish;
         foreach($cats as $item){
             $arr[$item->cat_ID] = $item->category_count;
         }
