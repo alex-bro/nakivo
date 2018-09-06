@@ -67,8 +67,9 @@
   background-image: url("../img/p2_bg.jpg");
   background-size: cover;
   position: relative;
+  margin: 0 auto 74px;
 }
-/* line 62, ../sass/main.scss */
+/* line 63, ../sass/main.scss */
 .news-wrapper .posts-wrapper .item .text-wrap {
   position: absolute;
   top: 50%;
@@ -78,32 +79,32 @@
   transition: 1s;
   padding: 23px;
 }
-/* line 70, ../sass/main.scss */
+/* line 71, ../sass/main.scss */
 .news-wrapper .posts-wrapper .item .text-wrap p {
   margin-bottom: 0;
   color: black;
   font-family: Muli;
 }
-/* line 75, ../sass/main.scss */
+/* line 76, ../sass/main.scss */
 .news-wrapper .posts-wrapper .item .text-wrap p.date {
   opacity: 0.38;
   font-size: 11px;
   font-weight: 600;
   text-transform: uppercase;
 }
-/* line 81, ../sass/main.scss */
+/* line 82, ../sass/main.scss */
 .news-wrapper .posts-wrapper .item .text-wrap p.title {
   font-size: 22px;
   font-weight: 600;
   margin-bottom: 9px;
 }
-/* line 86, ../sass/main.scss */
+/* line 87, ../sass/main.scss */
 .news-wrapper .posts-wrapper .item .text-wrap p.text {
   font-size: 16px;
   font-weight: 300;
   line-height: 22px;
 }
-/* line 93, ../sass/main.scss */
+/* line 94, ../sass/main.scss */
 .news-wrapper .posts-wrapper .item:hover .text-wrap {
   background: rgba(56, 56, 56, 0);
   background: -moz-linear-gradient(top, rgba(56, 56, 56, 0) 62%, rgba(56, 56, 56, 0.24) 71%, rgba(38, 38, 38, 0.95) 98%, #262626 100%);
@@ -114,8 +115,20 @@
   background: linear-gradient(to bottom, rgba(56, 56, 56, 0) 62%, rgba(56, 56, 56, 0.24) 71%, rgba(38, 38, 38, 0.95) 98%, #262626 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#383838', endColorstr='#262626', GradientType=0 );
 }
-/* line 102, ../sass/main.scss */
+/* line 103, ../sass/main.scss */
 .news-wrapper .posts-wrapper .item:hover .text-wrap p {
   color: #fff;
   opacity: 1;
+}
+/* line 111, ../sass/main.scss */
+.news-wrapper #load_more {
+  background-color: transparent;
+  color: white;
+  font-family: Muli;
+  font-size: 15px;
+  font-weight: 700;
+}
+/* line 117, ../sass/main.scss */
+.news-wrapper #load_more:focus {
+  box-shadow: none;
 }

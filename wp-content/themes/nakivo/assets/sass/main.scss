@@ -59,6 +59,7 @@
       background-image: url("../img/p2_bg.jpg");
       background-size: cover; 
       position: relative;
+      margin: 0 auto 74px;
       .text-wrap{
         position: absolute;
         top: 50%;
@@ -105,6 +106,16 @@
           }
         }
       }
+    }
+  }
+  #load_more{
+    background-color: transparent;
+    color: white;
+    font-family: Muli;
+    font-size: 15px;
+    font-weight: 700;
+    &:focus{
+      box-shadow:none;
     }
   }
 }
