@@ -4,4 +4,4 @@ The purpose of which shows the work of the category filter of WordPress posts wi
 
 A new template was created for the code that is located at the address: [https://github.com/alex-bro/nakivo/tree/master/wp-content/themes/nakivo](https://github.com/alex-bro/nakivo/tree/master/wp-content/themes/nakivo)
 
-Website address [http: //nakivo.siteeasy.ks.ua](http: //nakivo.siteeasy.ks.ua)
+Website address [http://nakivo.siteeasy.ks.ua](http://nakivo.siteeasy.ks.ua)
