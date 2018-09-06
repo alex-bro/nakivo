@@ -23,7 +23,7 @@ class Ajax
     }
 
     /**
-     * get news
+     * get news by ajax
      */
     function get_news(){
         check_ajax_referer('ajax-va-nonce', 'security');

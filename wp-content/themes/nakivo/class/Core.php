@@ -46,7 +46,7 @@ class Core
     }
 
     /**
-     * add scripts in admin side
+     * add scripts and styles
      */
     function add_scripts()
     {

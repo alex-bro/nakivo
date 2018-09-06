@@ -27,6 +27,10 @@ class Widgets
         }
     }
 
+    /**
+     *  return posts on main page in POST method query
+     * @return string html code
+     */
     static function get_all_posts(){
         $html = self::get_posts();
         $db = new Db();
@@ -37,6 +41,12 @@ class Widgets
         return $html;
     }
 
+    /**
+     * get all posts and by category and offset
+     * @param int $cat catalog id
+     * @param int $count offset
+     * @return string html code
+     */
     static function get_posts($cat = 0, $count = 0){
         if(!$cat){
             $args = [

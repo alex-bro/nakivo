@@ -34,6 +34,10 @@ class Db
         return $categories;
     }
 
+    /**
+     * get category counts and all
+     * @return array id=>count of posts
+     */
     function get_categories_counts(){
         $cats = $this->get_all_categories();
         $arr[0] = (int)wp_count_posts()->publish;
