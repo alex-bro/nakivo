@@ -12,8 +12,11 @@ class Db
     {
     }
 
+    /**
+     * Get all categories
+     * @return array category
+     */
     function get_all_categories(){
-
         $categories = get_categories( array(
             'type'         => 'post',
             'child_of'     => 0,
