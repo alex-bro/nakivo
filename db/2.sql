@@ -12,6 +12,7 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
 -- Dumping structure for таблиця nakivo.nk_commentmeta
+DROP TABLE IF EXISTS `nk_commentmeta`;
 CREATE TABLE IF NOT EXISTS `nk_commentmeta` (
   `meta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `comment_id` bigint(20) unsigned NOT NULL DEFAULT '0',
@@ -27,6 +28,7 @@ CREATE TABLE IF NOT EXISTS `nk_commentmeta` (
 /*!40000 ALTER TABLE `nk_commentmeta` ENABLE KEYS */;
 
 -- Dumping structure for таблиця nakivo.nk_comments
+DROP TABLE IF EXISTS `nk_comments`;
 CREATE TABLE IF NOT EXISTS `nk_comments` (
   `comment_ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `comment_post_ID` bigint(20) unsigned NOT NULL DEFAULT '0',
@@ -58,6 +60,7 @@ INSERT INTO `nk_comments` (`comment_ID`, `comment_post_ID`, `comment_author`, `c
 /*!40000 ALTER TABLE `nk_comments` ENABLE KEYS */;
 
 -- Dumping structure for таблиця nakivo.nk_links
+DROP TABLE IF EXISTS `nk_links`;
 CREATE TABLE IF NOT EXISTS `nk_links` (
   `link_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `link_url` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
@@ -81,6 +84,7 @@ CREATE TABLE IF NOT EXISTS `nk_links` (
 /*!40000 ALTER TABLE `nk_links` ENABLE KEYS */;
 
 -- Dumping structure for таблиця nakivo.nk_options
+DROP TABLE IF EXISTS `nk_options`;
 CREATE TABLE IF NOT EXISTS `nk_options` (
   `option_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `option_name` varchar(191) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
@@ -90,7 +94,7 @@ CREATE TABLE IF NOT EXISTS `nk_options` (
   UNIQUE KEY `option_name` (`option_name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=220 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
--- Dumping data for table nakivo.nk_options: ~138 rows (приблизно)
+-- Dumping data for table nakivo.nk_options: ~140 rows (приблизно)
 /*!40000 ALTER TABLE `nk_options` DISABLE KEYS */;
 INSERT INTO `nk_options` (`option_id`, `option_name`, `option_value`, `autoload`) VALUES
 	(1, 'siteurl', 'http://nakivo.siteeasy.ks.lo', 'yes'),
@@ -236,6 +240,7 @@ INSERT INTO `nk_options` (`option_id`, `option_name`, `option_value`, `autoload`
 /*!40000 ALTER TABLE `nk_options` ENABLE KEYS */;
 
 -- Dumping structure for таблиця nakivo.nk_postmeta
+DROP TABLE IF EXISTS `nk_postmeta`;
 CREATE TABLE IF NOT EXISTS `nk_postmeta` (
   `meta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `post_id` bigint(20) unsigned NOT NULL DEFAULT '0',
@@ -275,12 +280,13 @@ INSERT INTO `nk_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 	(46, 28, '_edit_lock', '1536272294:2'),
 	(47, 28, '_edit_last', '2'),
 	(48, 28, '_thumbnail_id', '14'),
-	(50, 30, '_edit_lock', '1536272756:2'),
+	(50, 30, '_edit_lock', '1536274567:2'),
 	(51, 30, '_edit_last', '2'),
 	(52, 30, '_thumbnail_id', '16');
 /*!40000 ALTER TABLE `nk_postmeta` ENABLE KEYS */;
 
 -- Dumping structure for таблиця nakivo.nk_posts
+DROP TABLE IF EXISTS `nk_posts`;
 CREATE TABLE IF NOT EXISTS `nk_posts` (
   `ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `post_author` bigint(20) unsigned NOT NULL DEFAULT '0',
@@ -346,6 +352,7 @@ INSERT INTO `nk_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 /*!40000 ALTER TABLE `nk_posts` ENABLE KEYS */;
 
 -- Dumping structure for таблиця nakivo.nk_termmeta
+DROP TABLE IF EXISTS `nk_termmeta`;
 CREATE TABLE IF NOT EXISTS `nk_termmeta` (
   `meta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `term_id` bigint(20) unsigned NOT NULL DEFAULT '0',
@@ -361,6 +368,7 @@ CREATE TABLE IF NOT EXISTS `nk_termmeta` (
 /*!40000 ALTER TABLE `nk_termmeta` ENABLE KEYS */;
 
 -- Dumping structure for таблиця nakivo.nk_terms
+DROP TABLE IF EXISTS `nk_terms`;
 CREATE TABLE IF NOT EXISTS `nk_terms` (
   `term_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(200) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
@@ -381,6 +389,7 @@ INSERT INTO `nk_terms` (`term_id`, `name`, `slug`, `term_group`) VALUES
 /*!40000 ALTER TABLE `nk_terms` ENABLE KEYS */;
 
 -- Dumping structure for таблиця nakivo.nk_term_relationships
+DROP TABLE IF EXISTS `nk_term_relationships`;
 CREATE TABLE IF NOT EXISTS `nk_term_relationships` (
   `object_id` bigint(20) unsigned NOT NULL DEFAULT '0',
   `term_taxonomy_id` bigint(20) unsigned NOT NULL DEFAULT '0',
@@ -402,6 +411,7 @@ INSERT INTO `nk_term_relationships` (`object_id`, `term_taxonomy_id`, `term_orde
 /*!40000 ALTER TABLE `nk_term_relationships` ENABLE KEYS */;
 
 -- Dumping structure for таблиця nakivo.nk_term_taxonomy
+DROP TABLE IF EXISTS `nk_term_taxonomy`;
 CREATE TABLE IF NOT EXISTS `nk_term_taxonomy` (
   `term_taxonomy_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `term_id` bigint(20) unsigned NOT NULL DEFAULT '0',
@@ -424,6 +434,7 @@ INSERT INTO `nk_term_taxonomy` (`term_taxonomy_id`, `term_id`, `taxonomy`, `desc
 /*!40000 ALTER TABLE `nk_term_taxonomy` ENABLE KEYS */;
 
 -- Dumping structure for таблиця nakivo.nk_usermeta
+DROP TABLE IF EXISTS `nk_usermeta`;
 CREATE TABLE IF NOT EXISTS `nk_usermeta` (
   `umeta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `user_id` bigint(20) unsigned NOT NULL DEFAULT '0',
@@ -481,6 +492,7 @@ INSERT INTO `nk_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`) VALU
 /*!40000 ALTER TABLE `nk_usermeta` ENABLE KEYS */;
 
 -- Dumping structure for таблиця nakivo.nk_users
+DROP TABLE IF EXISTS `nk_users`;
 CREATE TABLE IF NOT EXISTS `nk_users` (
   `ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `user_login` varchar(60) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
