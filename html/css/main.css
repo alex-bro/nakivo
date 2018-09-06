@@ -1,0 +1,121 @@
+@font-face {
+  font-family: Muli;
+  src: url(../fonts/Muli/Muli-Regular.ttf);
+}
+/* line 5, ../sass/main.scss */
+#main {
+  background-image: url("../img/bg_blue_02.jpg");
+  background-size: contain;
+}
+
+/* line 10, ../sass/main.scss */
+.no-padding {
+  padding: 0;
+}
+
+/* line 14, ../sass/main.scss */
+.header-img img, .footer-img img {
+  width: 100%;
+}
+
+/* line 18, ../sass/main.scss */
+.news-wrapper {
+  background-image: url("../img/bg_blue_02.jpg");
+  background-size: cover;
+  padding-top: 134px;
+  margin-top: -73px;
+  padding-bottom: 134px;
+  margin-bottom: -73px;
+}
+/* line 25, ../sass/main.scss */
+.news-wrapper h2 {
+  color: white;
+  font-family: Muli;
+  font-size: 34px;
+  font-weight: 700;
+}
+/* line 31, ../sass/main.scss */
+.news-wrapper ul.filter {
+  margin-left: 0;
+  padding-left: 0;
+}
+/* line 34, ../sass/main.scss */
+.news-wrapper ul.filter li {
+  list-style-type: none;
+  float: left;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+/* line 39, ../sass/main.scss */
+.news-wrapper ul.filter li a {
+  color: white;
+  font-family: Muli;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 4px 10px;
+}
+/* line 49, ../sass/main.scss */
+.news-wrapper ul.filter li.active a {
+  border: 1px solid white;
+  border-radius: 20px;
+}
+/* line 56, ../sass/main.scss */
+.news-wrapper .posts-wrapper .item {
+  width: 300px;
+  min-height: 372px;
+  background-image: url("../img/p2_bg.jpg");
+  background-size: cover;
+  position: relative;
+}
+/* line 62, ../sass/main.scss */
+.news-wrapper .posts-wrapper .item .text-wrap {
+  position: absolute;
+  top: 50%;
+  background-color: #fff;
+  width: 100%;
+  height: 50%;
+  transition: 1s;
+  padding: 23px;
+}
+/* line 70, ../sass/main.scss */
+.news-wrapper .posts-wrapper .item .text-wrap p {
+  margin-bottom: 0;
+  color: black;
+  font-family: Muli;
+}
+/* line 75, ../sass/main.scss */
+.news-wrapper .posts-wrapper .item .text-wrap p.date {
+  opacity: 0.38;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+/* line 81, ../sass/main.scss */
+.news-wrapper .posts-wrapper .item .text-wrap p.title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 9px;
+}
+/* line 86, ../sass/main.scss */
+.news-wrapper .posts-wrapper .item .text-wrap p.text {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 22px;
+}
+/* line 93, ../sass/main.scss */
+.news-wrapper .posts-wrapper .item:hover .text-wrap {
+  background: rgba(56, 56, 56, 0);
+  background: -moz-linear-gradient(top, rgba(56, 56, 56, 0) 62%, rgba(56, 56, 56, 0.24) 71%, rgba(38, 38, 38, 0.95) 98%, #262626 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(62%, rgba(56, 56, 56, 0)), color-stop(71%, rgba(56, 56, 56, 0.24)), color-stop(98%, rgba(38, 38, 38, 0.95)), color-stop(100%, #262626));
+  background: -webkit-linear-gradient(top, rgba(56, 56, 56, 0) 62%, rgba(56, 56, 56, 0.24) 71%, rgba(38, 38, 38, 0.95) 98%, #262626 100%);
+  background: -o-linear-gradient(top, rgba(56, 56, 56, 0) 62%, rgba(56, 56, 56, 0.24) 71%, rgba(38, 38, 38, 0.95) 98%, #262626 100%);
+  background: -ms-linear-gradient(top, rgba(56, 56, 56, 0) 62%, rgba(56, 56, 56, 0.24) 71%, rgba(38, 38, 38, 0.95) 98%, #262626 100%);
+  background: linear-gradient(to bottom, rgba(56, 56, 56, 0) 62%, rgba(56, 56, 56, 0.24) 71%, rgba(38, 38, 38, 0.95) 98%, #262626 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#383838', endColorstr='#262626', GradientType=0 );
+}
+/* line 102, ../sass/main.scss */
+.news-wrapper .posts-wrapper .item:hover .text-wrap p {
+  color: #fff;
+  opacity: 1;
+}
