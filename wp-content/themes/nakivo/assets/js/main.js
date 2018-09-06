@@ -1,5 +1,9 @@
 jQuery(document).ready(function($){
 
+    /**
+     * show or hide button load more
+     * @param cat_id category id
+     */
     function toggle_load_more(cat_id){
         if($('[data-cat-posts="'+cat_id+'"] .item').length < Number(abv.cat_counts[cat_id])){
             $('#load_more').css('cssText','display:block!important;');
@@ -23,6 +27,9 @@ jQuery(document).ready(function($){
         return false;
     });
 
+    /**
+     *  get ajax posts
+     */
     var processed = false;
     $('#load_more').click(function(){
         if(!processed){
@@ -45,7 +52,6 @@ jQuery(document).ready(function($){
                 success: function (data) {
                     processed = false;
                     $('#spinner').css('visibility','hidden');
-                    console.log(data.cat_counts);
                     if(data.result) {
                         $(".post_wrapper_all .active").append($(data.html).html());
                         abv.cat_counts = data.cat_counts;
