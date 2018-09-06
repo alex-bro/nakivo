@@ -16,6 +16,9 @@
             </div>
 
             <div class="row">
+                <img id="spinner" class="d-block mx-auto" src="<?php echo get_template_directory_uri() ?>/assets/img/spinner.gif" alt="">
+            </div>
+            <div class="row">
                 <button id="load_more" class="btn btn-light d-block mx-auto" <?php global $nakivo;  if($nakivo->cat_counts[0]) echo ' style="display: block!important;"'  ?>>Load More</button>
             </div>
         </div>

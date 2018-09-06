@@ -40,6 +40,7 @@ class Widgets
     static function get_posts($cat = 0, $count = 0){
         if(!$cat){
             $args = [
+                'offset'=>$count,
                 'posts_per_page' => 3,
                 'orderby'=>'date',
                 'order'=>'DESC ',

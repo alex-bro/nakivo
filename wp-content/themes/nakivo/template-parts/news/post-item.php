@@ -1,4 +1,4 @@
-<div class="col-md-4">
+<div class="col-lg-4 col-md-6 item-wrap">
     <a href="<?php echo get_the_permalink($item->ID) ?>">
         <div class="item" <?php if($url = get_the_post_thumbnail_url($item, 'medium')) echo 'style="background-image: url('.$url.')"' ?> >
             <div class="text-wrap">
