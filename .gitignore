@@ -20,7 +20,7 @@ wp-content/backups/
 *.tgz
 !wp-includes/**/*.gz
 
-# Logs and databases #
+# Logs #
 ######################
 *.log
 

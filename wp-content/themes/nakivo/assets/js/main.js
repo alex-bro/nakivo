@@ -9,6 +9,9 @@ jQuery(document).ready(function($){
         $this.parents('li').addClass('active');
         $('.post_wrapper_all .posts-wrapper').removeClass('active');
         $('[data-cat-posts="'+cat_id+'"]').addClass('active');
+
+
+
         return false;
     })
 });

@@ -16,7 +16,7 @@
             </div>
 
             <div class="row">
-                <button id="load_more" class="btn btn-light d-block mx-auto">Load More</button>
+                <button id="load_more" class="btn btn-light d-block mx-auto" <?php global $nakivo;  if($nakivo->cat_counts[0]) echo ' style="display: none;"'  ?>>Load More</button>
             </div>
         </div>
     </div>

@@ -11,12 +11,19 @@ class Core
     public $version;
 
     /**
+     * @var array category post counts
+     */
+    public $cat_counts;
+
+    /**
      * construct method
      */
     function __construct(){
-        $this->version = '0.0.1';
-
         $ajax = new Ajax();
+        $db = new Db();
+
+        $this->version = '0.0.1';
+        $this->cat_counts = $db->get_categories_counts();
 
         $this->theme_setting();
         $this->theme_action();
@@ -50,6 +57,11 @@ class Core
         wp_enqueue_script( 'popper', get_template_directory_uri() . '/assets/lib/bootstrap-4.0.0-dist/js/popper.min.js', array(), $this->version, true );
         wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/assets/lib/bootstrap-4.0.0-dist/js/bootstrap.min.js', array(), $this->version, true );
         wp_enqueue_script( 'main-js', get_template_directory_uri() . '/assets/js/main.js', array(), $this->version, true );
+
+        wp_localize_script( 'jquery-3-2-1', 'abv', array(
+            'ajaxurl'=>admin_url('admin-ajax.php'),
+            'cat_counts'=>$this->cat_counts,
+        ) );
     }
 
 }
