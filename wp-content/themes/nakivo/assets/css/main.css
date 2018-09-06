@@ -54,13 +54,14 @@
   font-weight: 700;
   text-decoration: none;
   padding: 4px 10px;
+  border: 1px solid transparent;
 }
-/* line 49, ../sass/main.scss */
+/* line 50, ../sass/main.scss */
 .news-wrapper ul.filter li.active a {
   border: 1px solid white;
   border-radius: 20px;
 }
-/* line 56, ../sass/main.scss */
+/* line 57, ../sass/main.scss */
 .news-wrapper .posts-wrapper .item {
   width: 300px;
   min-height: 372px;
@@ -69,7 +70,7 @@
   position: relative;
   margin: 0 auto 74px;
 }
-/* line 63, ../sass/main.scss */
+/* line 64, ../sass/main.scss */
 .news-wrapper .posts-wrapper .item .text-wrap {
   position: absolute;
   top: 50%;
@@ -78,33 +79,34 @@
   height: 50%;
   transition: 1s;
   padding: 23px;
+  overflow: hidden;
 }
-/* line 71, ../sass/main.scss */
+/* line 73, ../sass/main.scss */
 .news-wrapper .posts-wrapper .item .text-wrap p {
   margin-bottom: 0;
   color: black;
   font-family: Muli;
 }
-/* line 76, ../sass/main.scss */
+/* line 78, ../sass/main.scss */
 .news-wrapper .posts-wrapper .item .text-wrap p.date {
   opacity: 0.38;
   font-size: 11px;
   font-weight: 600;
   text-transform: uppercase;
 }
-/* line 82, ../sass/main.scss */
+/* line 84, ../sass/main.scss */
 .news-wrapper .posts-wrapper .item .text-wrap p.title {
   font-size: 22px;
   font-weight: 600;
   margin-bottom: 9px;
 }
-/* line 87, ../sass/main.scss */
+/* line 89, ../sass/main.scss */
 .news-wrapper .posts-wrapper .item .text-wrap p.text {
   font-size: 16px;
   font-weight: 300;
   line-height: 22px;
 }
-/* line 94, ../sass/main.scss */
+/* line 96, ../sass/main.scss */
 .news-wrapper .posts-wrapper .item:hover .text-wrap {
   background: rgba(56, 56, 56, 0);
   background: -moz-linear-gradient(top, rgba(56, 56, 56, 0) 62%, rgba(56, 56, 56, 0.24) 71%, rgba(38, 38, 38, 0.95) 98%, #262626 100%);
@@ -115,12 +117,12 @@
   background: linear-gradient(to bottom, rgba(56, 56, 56, 0) 62%, rgba(56, 56, 56, 0.24) 71%, rgba(38, 38, 38, 0.95) 98%, #262626 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#383838', endColorstr='#262626', GradientType=0 );
 }
-/* line 103, ../sass/main.scss */
+/* line 105, ../sass/main.scss */
 .news-wrapper .posts-wrapper .item:hover .text-wrap p {
   color: #fff;
   opacity: 1;
 }
-/* line 111, ../sass/main.scss */
+/* line 113, ../sass/main.scss */
 .news-wrapper #load_more {
   background-color: transparent;
   color: white;
@@ -128,7 +130,15 @@
   font-size: 15px;
   font-weight: 700;
 }
-/* line 117, ../sass/main.scss */
+/* line 119, ../sass/main.scss */
 .news-wrapper #load_more:focus {
   box-shadow: none;
+}
+/* line 124, ../sass/main.scss */
+.news-wrapper .post_wrapper_all .active {
+  display: flex !important;
+}
+/* line 127, ../sass/main.scss */
+.news-wrapper .post_wrapper_all .posts-wrapper {
+  display: none;
 }

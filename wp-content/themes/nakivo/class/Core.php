@@ -9,20 +9,24 @@ class Core
      * @var string version of theme
      */
     public $version;
+
     /**
      * construct method
      */
-    function __construct()
-    {
+    function __construct(){
         $this->version = '0.0.1';
 
-        //(new Ajax());
+        $ajax = new Ajax();
 
         $this->theme_setting();
+        $this->theme_action();
+    }
 
+    /**
+     * theme actions and filters
+     */
+    function theme_action(){
         add_action('wp_enqueue_scripts', [$this, 'add_scripts']);
-
-
     }
 
     /**

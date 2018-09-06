@@ -43,6 +43,7 @@
         font-weight: 700;
         text-decoration: none;
         padding: 4px 10px;
+        border: 1px solid transparent;
       }
     }
     li.active {
@@ -68,6 +69,7 @@
         height: 50%;
         transition: 1s;
         padding: 23px;
+        overflow: hidden;
         p {
           margin-bottom: 0;
           color: black;
@@ -116,6 +118,14 @@
     font-weight: 700;
     &:focus{
       box-shadow:none;
+    }
+  }
+  .post_wrapper_all{
+    .active{
+      display: flex!important;
+    }
+    .posts-wrapper {
+      display: none;
     }
   }
 }
