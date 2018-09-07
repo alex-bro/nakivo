@@ -33,9 +33,8 @@ class Core
         $ajax = new Ajax();
 
         $this->version = '0.0.1';
-        $this->post_counts = $this->get_posts_counts();
 
-        $this->theme_setting();
+        //$this->theme_setting();
         $this->theme_action();
     }
 
@@ -52,7 +51,7 @@ class Core
             $all += $count;
         }
         $arr['all'] = $all;
-        return $arr;
+        $this->post_counts =  $arr;
     }
 
     /**
@@ -62,6 +61,8 @@ class Core
     {
         add_action('wp_enqueue_scripts', [$this, 'add_scripts']);
         add_action('init', [$this, 'add_post_types']);
+        add_action('init', [$this, 'get_posts_counts']);
+        add_action('init', [$this, 'theme_setting']);
     }
 
     /**
@@ -158,7 +159,6 @@ class Core
         /**
          * Post Type: Events.
          */
-
         $labels = array(
             "name" => __("Events", ""),
             "singular_name" => __("Event", ""),
@@ -206,12 +206,7 @@ class Core
     function theme_setting()
     {
         // add post thumbnail
-        add_theme_support('post-thumbnails', array(
-            'post',
-            'stories',
-            'press',
-            'events'
-        ));
+        add_theme_support('post-thumbnails', $this->list_post_types);
 
 
     }

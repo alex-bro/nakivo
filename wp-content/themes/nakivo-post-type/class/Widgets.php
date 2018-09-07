@@ -31,10 +31,10 @@ class Widgets
      * @return string html code
      */
     static function get_all_posts(){
-        $html = self::get_posts(1,0,'all');
+        $html = self::get_posts('all',0);
         global $nakivo_pt;
         foreach($nakivo_pt->list_post_types as $item) {
-            $html .= self::get_posts(0,0,$item);
+            $html .= self::get_posts($item,0);
         }
         return $html;
     }
@@ -46,8 +46,8 @@ class Widgets
      * @param string $post_type post type slag
      * @return string html code
      */
-    static function get_posts($all = 1, $count = 0, $post_type = 'post'){
-        if($all){
+    static function get_posts($post_type = 'all', $count = 0){
+        if($post_type == 'all'){
             global $nakivo_pt;
             $args = [
                 'post_type'=>$nakivo_pt->list_post_types,

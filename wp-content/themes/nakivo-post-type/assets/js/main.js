@@ -2,10 +2,10 @@ jQuery(document).ready(function($){
 
     /**
      * show or hide button load more
-     * @param cat_id category id
+     * @param post_slug post slug
      */
-    function toggle_load_more(cat_id){
-        if($('[data-cat-posts="'+cat_id+'"] .item').length < Number(abv.post_counts[cat_id])){
+    function toggle_load_more(post_slug){
+        if($('[data-cat-posts="'+post_slug+'"] .item').length < Number(abv.post_counts[post_slug])){
             $('#load_more').css('cssText','display:block!important;');
         } else {
             $('#load_more').css('cssText','display:none!important;');
@@ -17,13 +17,13 @@ jQuery(document).ready(function($){
      */
     $('[data-cat]').on('click',function(){
         var $this = $(this);
-        var cat_id = $this.attr('data-cat');
+        var post_slug = $this.attr('data-cat');
         $('.filter li').removeClass('active');
         $this.parents('li').addClass('active');
         $('.post_wrapper_all .posts-wrapper').removeClass('active');
-        $('[data-cat-posts="'+cat_id+'"]').addClass('active');
+        $('[data-cat-posts="'+post_slug+'"]').addClass('active');
 
-        toggle_load_more(cat_id);
+        toggle_load_more(post_slug);
 
         return false;
     });
