@@ -1,0 +1,68 @@
+jQuery(document).ready(function($){
+
+    /**
+     * show or hide button load more
+     * @param cat_id category id
+     */
+    function toggle_load_more(cat_id){
+        if($('[data-cat-posts="'+cat_id+'"] .item').length < Number(abv.post_counts[cat_id])){
+            $('#load_more').css('cssText','display:block!important;');
+        } else {
+            $('#load_more').css('cssText','display:none!important;');
+        }
+    }
+
+    /**
+     *  click on filter
+     */
+    $('[data-cat]').on('click',function(){
+        var $this = $(this);
+        var cat_id = $this.attr('data-cat');
+        $('.filter li').removeClass('active');
+        $this.parents('li').addClass('active');
+        $('.post_wrapper_all .posts-wrapper').removeClass('active');
+        $('[data-cat-posts="'+cat_id+'"]').addClass('active');
+
+        toggle_load_more(cat_id);
+
+        return false;
+    });
+
+    /**
+     *  get ajax posts
+     */
+    var processed = false;
+    $('#load_more').click(function(){
+        if(!processed){
+            processed = true;
+            var cat = $('.post_wrapper_all .active').attr('data-cat-posts');
+            var count = $('.post_wrapper_all .active .item').length;
+            $('#spinner').css('visibility','visible');
+            $.ajax({
+                type: 'POST',
+                dataType: 'json',
+                url: abv.ajaxurl,
+                data: {
+                    'action': 'ajax_get_news',
+                    'security': $('#security_va').val(),
+                    'data':{
+                        'cat':cat,
+                        'count':count
+                    },
+                },
+                success: function (data) {
+                    processed = false;
+                    $('#spinner').css('visibility','hidden');
+                    if(data.result) {
+                        $(".post_wrapper_all .active").append($(data.html).html());
+                        abv.post_counts = data.post_counts;
+                        toggle_load_more(cat);
+                    }
+                }
+            });
+        }
+
+    })
+
+
+});

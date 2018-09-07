@@ -22,7 +22,7 @@ class Core
         $ajax = new Ajax();
         $db = new Db();
 
-        $this->version = '0.0.1';
+        $this->version = '0.0.2';
         $this->cat_counts = $db->get_categories_counts();
 
         $this->theme_setting();
@@ -42,6 +42,7 @@ class Core
     function theme_setting(){
         add_theme_support('post-thumbnails', array(
             'post',
+
         ));
     }
 
